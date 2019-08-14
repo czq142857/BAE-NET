@@ -35,7 +35,7 @@ It has also been tested on Windows 10 but something went wrong. If sigmoid is pl
 We use the same point sampling method as in [IM-NET](https://github.com/czq142857/implicit-decoder).
 For data preparation, please see directory [point_sampling](https://github.com/czq142857/BAE-NET/tree/master/point_sampling).
 
-We provide the ready-to-use ShapeNet dataset, together with our pre-trained weights for one-shot training with 1/2/3 exemplars.
+We provide the ready-to-use ShapeNet dataset, together with our trained weights for one-shot training with 1/2/3 exemplars.
 If you would like to try our 4-layer model, please uncomment "level 2_2" of the generator in "model.py".
 
 - [ShapeNet dataset](https://drive.google.com/open?id=1NvbGIC-XqZGs9pz6wgFwwEPALR-iR8E0)
