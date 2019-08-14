@@ -31,7 +31,7 @@ Our code has been tested with Python 3.5, TensorFlow 1.9.0, CUDA 9.1 and cuDNN 7
 It has also been tested on Windows 10 but something went wrong. If sigmoid is placed before reduce_max, sigmoid won't be executed in certain cases. The solution is to change the last few layers of the decoder from "linear - sigmoid - reduce_max" to "linear - reduce_max - sigmoid".
 
 
-## Datasets and Pre-trained weights
+## Datasets and weights
 We use the same point sampling method as in [IM-NET](https://github.com/czq142857/implicit-decoder).
 For data preparation, please see directory [point_sampling](https://github.com/czq142857/BAE-NET/tree/master/point_sampling).
 
