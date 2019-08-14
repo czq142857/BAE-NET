@@ -1,4 +1,4 @@
-# point sampling code for implicit-decoder
+# point sampling code for BAE-NET
 
 See [IM-NET](https://www.sfu.ca/~zhiqinc/imgan/Readme.html) for detailed sampling method.
 
