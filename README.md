@@ -60,9 +60,9 @@ python main.py --train --L1reg --supervised --iteration 200000 --pretrain_iters 
 ```
 The above command will train the model (with L1 regularization) 200000 iterations after 3000 iterations of supervised-loss-only pretraining. It will do one supervised PASS (training all shapes in supervision_list using supervised loss) every 4 iterations of unsupervised training.
 The file specified by "--supervision_list" should include the exemplars for supervised loss.
-"--real_size 32 --points_per_shape 8192" means the training voxels are 32^3 and each shape has 8192 sampled points.
+"--real_size 32 --points_per_shape 8192" means during training each target shape has 8192 sampled points from its 32^3 voxel model.
 
-You can run the batch file "train_1shot.bat", "train_2shot.bat" and "train_3shot.bat" to train on all categories in ShapeNet.
+You can run the batch files "train_1shot.bat", "train_2shot.bat" and "train_3shot.bat" to train on all categories in ShapeNet.
 ```
 sh train_1shot.bat
 ```
@@ -70,7 +70,7 @@ sh train_1shot.bat
 
 To perform unsupervised training, please remove "--supervised":
 ```
-python main.py --train --L1reg --iteration 200000 --dataset 03001627_vox --data_dir ./data/03001627_chair/ --checkpoint_dir checkpoint_1shot_1_3000 --sample_dir samples/03001627_chair  --real_size 32 --points_per_shape 8192
+python main.py --train --L1reg --iteration 200000 --dataset 03001627_vox --data_dir ./data/03001627_chair/ --checkpoint_dir checkpoint_unsup --sample_dir samples/03001627_chair  --real_size 32 --points_per_shape 8192
 ```
 In default settings the decoder will have 8 branches.
 
@@ -98,12 +98,12 @@ python main.py --pointcloud --L1reg --supervised --iteration 200000 --pretrain_i
 ```
 
 
-To visualize given meshes with colored segmentation, you will need to change the directory of ShapeNet (containing .obj meshes) in function "test_obj" at "model.py", then replace "--train" with "--mesh" and specify the target shapes using "--supervision_list":
+To visualize given meshes with colored segmentation, please change the directory of ShapeNet (containing .obj meshes) in function "test_obj" at "model.py", then replace "--train" with "--mesh" and specify the target shapes using "--supervision_list":
 ```
 python main.py --mesh --L1reg --supervised --iteration 200000 --pretrain_iters 3000 --retrain_iters 4 --dataset 03001627_vox --data_dir ./data/03001627_chair/ --checkpoint_dir checkpoint_1shot --supervision_list 03001627_test_vox.txt --sample_dir samples/03001627_chair  --real_size 32 --points_per_shape 8192
 ```
 
-All visualization results will be found in folder "samples".
+All visualization results are saved to folder "samples".
 Please see "test_reconstruction_1shot.bat", "test_pointcloud_1shot.bat", "test_mesh_1shot.bat" and "test_iou_1shot.bat" for more examples.
 
 
