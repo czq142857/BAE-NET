@@ -98,12 +98,12 @@ python main.py --pointcloud --L1reg --supervised --iteration 200000 --pretrain_i
 ```
 
 
-To visualize given meshes with colored segmentation, replace "--train" with "--mesh" and specify the target shapes using "--supervision_list":
+To visualize given meshes with colored segmentation, you will need to change the directory of ShapeNet (containing .obj meshes) in function "test_obj" at "model.py", then replace "--train" with "--mesh" and specify the target shapes using "--supervision_list":
 ```
 python main.py --mesh --L1reg --supervised --iteration 200000 --pretrain_iters 3000 --retrain_iters 4 --dataset 03001627_vox --data_dir ./data/03001627_chair/ --checkpoint_dir checkpoint_1shot --supervision_list 03001627_test_vox.txt --sample_dir samples/03001627_chair  --real_size 32 --points_per_shape 8192
 ```
 
-
+All visualization results will be found in folder "samples".
 Please see "test_reconstruction_1shot.bat", "test_pointcloud_1shot.bat", "test_mesh_1shot.bat" and "test_iou_1shot.bat" for more examples.
 
 
