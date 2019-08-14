@@ -8,7 +8,7 @@ The tensorflow code for paper "BAE-NET: Branched Autoencoder for Shape Co-Segmen
 
 
 ## Introduction
-We treat shape co-segmentation as a representation learning problem and introduce BAE-NET, a branched autoencoder network, for the task. The unsupervised BAE-NET is trained with all shapes in an input collection using a shape reconstruction loss, without ground-truth segmentations. Specifically, the network takes an input shape and encodes it using a convolutional neural network, whereas the decoder concatenates the resulting feature code with a point coordinate and outputs a value indicating whether the point is inside/outside the shape. Importantly, the decoder is branched: each branch learns a compact representation for one commonly recurring part of the shape collection, e.g., airplane wings. By complementing the shape reconstruction loss with a label loss, BAE-NET is easily tuned for one-shot learning. We show unsupervised, weakly supervised, and one-shot learning results by BAE-NET, demonstrating that using only a couple of exemplars, our network can generally outperform state-of-the-art supervised methods trained on hundreds of segmented shapes.
+We treat shape co-segmentation as a representation learning problem and introduce BAE-NET, a branched autoencoder network, for the task. The unsupervised BAE-NET is trained with a collection of un-segmented shapes, using a shape reconstruction loss, without any ground-truth labels. Specifically, the network takes an input shape and encodes it using a convolutional neural network, whereas the decoder concatenates the resulting feature code with a point coordinate and outputs a value indicating whether the point is inside/outside the shape. Importantly, the decoder is branched: each branch learns a compact representation for one commonly recurring part of the shape collection, e.g., airplane wings. By complementing the shape reconstruction loss with a label loss, BAE-NET is easily tuned for one-shot learning. We show unsupervised, weakly supervised, and one-shot learning results by BAE-NET, demonstrating that using only a couple of exemplars, our network can generally outperform state-of-the-art supervised methods trained on hundreds of segmented shapes.
 
 ## Citation
 If you find our work useful in your research, please consider citing:
@@ -27,6 +27,7 @@ Requirements:
 - [PyMCubes](https://github.com/pmneila/PyMCubes) (optional, for marching cubes)
 
 Our code has been tested with Python 3.5, TensorFlow 1.9.0, CUDA 9.1 and cuDNN 7.0 on Ubuntu 16.04.
+
 It has also been tested on Windows 10 but something went wrong. If sigmoid is placed before reduce_max, sigmoid won't be executed in certain cases. The solution is to change the last few layers of the decoder from "linear - sigmoid - reduce_max" to "linear - reduce_max - sigmoid".
 
 
