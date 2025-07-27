@@ -1,7 +1,7 @@
 # BAE-NET
 The tensorflow code for paper "BAE-NET: Branched Autoencoder for Shape Co-Segmentation", [Zhiqin Chen](https://www.sfu.ca/~zhiqinc/),  [Kangxue Yin](https://kangxue.org/),  [Matthew Fisher](https://techmatt.github.io/),  [Siddhartha Chaudhuri](https://www.cse.iitb.ac.in/~sidch/),  [Hao (Richard) Zhang](https://www.cs.sfu.ca/~haoz/).
 
-### [Paper](https://arxiv.org/abs/1903.11228)  |   [Supplementary Material](https://www.sfu.ca/~zhiqinc/imseg/sup.pdf)
+### [Paper](https://arxiv.org/abs/1903.11228)  |   [Supplementary Material](https://github.com/czq142857/BAE-NET/tree/master/img/sup.pdf)
 
 
 <img src='img/oneshot.png' />
